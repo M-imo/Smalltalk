@@ -45,6 +45,7 @@ dependencies {
 // ikke helt oppdatert skriv inn etter: 1.0.0 trykk på lampa og oppdater til 2.4.1
     kapt "androidx.room:room-compiler:2.4.1"
 
+
     implementation "androidx.fragment:fragment-ktx:1.4.1"
     implementation 'androidx.legacy:legacy-support-v4:1.0.0'
 

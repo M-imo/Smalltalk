@@ -11,6 +11,7 @@ import androidx.appcompat.widget.AppCompatButton
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.add
 import androidx.fragment.app.commit
+import androidx.fragment.app.viewModels
 import com.example.smalltalk.database.AppDatabase
 import com.example.smalltalk.database.User
 import com.example.smalltalk.database.UserDAO
@@ -20,12 +21,12 @@ import kotlinx.coroutines.launch
 
 class InnloggingFragment : Fragment() {
 
-    private lateinit var brukernavn: EditText
-    private lateinit var passord: EditText
+    private lateinit var brukernavn: EditText // denne kan ikke være med i viewModel fordi den inngår i viewet
+    private lateinit var passord: EditText   // denne kan ikke være med i viewModel fordi den inngår i viewet
     private lateinit var logInButton: AppCompatButton
-    private lateinit var glemtpassord: TextView
+    private lateinit var glemtpassord: TextView  // denne kan ikke være med i viewModel fordi den inngår i viewet
     private lateinit var userDAO: UserDAO
-
+    private val viewModel: InnloggingFragmentViewModel by viewModels() // for å få denne gul må du skrive i InnloggingFragmentviewModel class InnloggingFragmentViewModel : viewModel()
 
 
     override fun onCreateView(
@@ -61,7 +62,7 @@ class InnloggingFragment : Fragment() {
                 val user = User("Erna", "Solberg")
 
                 // Kalle funksjon med en callback
-                logInUser(user) {
+                viewModel.logInUser(userDAO,user) {
                     activity?.supportFragmentManager?.commit {
                         setReorderingAllowed(true)
                         add<ChatlistFragment>(R.id.fragmentContainerView)
@@ -73,15 +74,15 @@ class InnloggingFragment : Fragment() {
         }
     }
 
-    private fun logInUser(user: User, callback: () -> Unit) {
+   /* private fun logInUser(user: User, callback: () -> Unit) {
         // Start en ny tråd
         CoroutineScope(Dispatchers.IO).launch {
             //Fjerne alle brukere og legge til den vi logget inn med
             userDAO.deleteAllUsers()
             userDAO.addUser(user)
             callback()
-        }.start()
-    }
+        }.start() // Dette er flyttet til InnloggingFragmentViewModel så kan slette denne nå
+    }*/
 }
 
 
