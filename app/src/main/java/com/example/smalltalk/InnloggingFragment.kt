@@ -24,8 +24,8 @@ class InnloggingFragment : Fragment() {
     private lateinit var passord: EditText
     private lateinit var logInButton: AppCompatButton
     private lateinit var glemtpassord: TextView
-
     private lateinit var userDAO: UserDAO
+
 
 
     override fun onCreateView(
