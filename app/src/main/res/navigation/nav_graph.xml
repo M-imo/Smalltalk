@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/innloggingFragment">
+
+    <fragment
+        android:id="@+id/innloggingFragment"
+        android:name="com.example.smalltalk.InnloggingFragment"
+        android:label="InnloggingFragment"
+        tools:layout="@layout/fragment_innlogging">
+        <action
+            android:id="@+id/action_innloggingFragment_to_chatlistFragment"
+            app:destination="@id/chatlistFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/chatlistFragment"
+        android:name="com.example.smalltalk.ChatlistFragment"
+        android:label="ChatlistFragment"
+        tools:layout="@layout/fragment_chatlist">
+        <action
+            android:id="@+id/action_chatlistFragment_to_profileFragment"
+            app:destination="@id/profileFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="com.example.smalltalk.ProfileFragment"
+        android:label="ProfileFragment"
+        tools:layout="@layout/fragment_profile">
+        <action
+            android:id="@+id/action_profileFragment_to_innloggingFragment"
+            app:destination="@id/innloggingFragment" />
+    </fragment>
+</navigation>

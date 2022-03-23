@@ -32,8 +32,8 @@
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/chat_recycler_view"
-        android:layout_width="414dp"
-        android:layout_height="742dp"
+        android:layout_width="match_parent"
+        android:layout_height="590dp"
         android:layout_marginTop="23dp"
         android:layout_marginEnd="3dp"
         android:layout_marginBottom="2dp"
@@ -41,10 +41,10 @@
         android:paddingEnd="@dimen/space_medium"
         app:layout_constraintBottom_toTopOf="@+id/chat_message_input"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.714"
+        app:layout_constraintHorizontal_bias="0.333"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/chat_nav_bar_title"
-        app:layout_constraintVertical_bias="0.461" />
+        app:layout_constraintVertical_bias="0.0" />
 
     <EditText
         android:id="@+id/chat_message_input"

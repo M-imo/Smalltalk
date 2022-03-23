@@ -1,23 +1,102 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ProfileFragment">
-
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recycle.view"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        layout_constrainsBottom_toBottomOf="parent"
-        layout_constraintStart_toStartOf="parent"
-        layout_constraintEnd_toEndOf="parent"
-        />
-
+    android:backgroundTint="#FEFCFC"
+    tools:context=".MainActivity">
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="match_parent"
-        android:layout_height="821dp">
+        android:id="@+id/constraintLayout"
+        android:layout_width="0dp"
+        android:layout_height="300dp"
+        android:layout_marginBottom="431dp"
+        android:background="@color/teal_200"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0">
+
+        <ImageView
+            android:id="@+id/imageView_ProfilBilde"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="116dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.498"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:srcCompat="@tools:sample/avatars" />
+
+        <TextView
+            android:id="@+id/textView_Profilnavn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="Erna Solberg"
+            android:textColor="@color/white"
+            android:textColorLink="#A4CEC4"
+            android:textSize="14dp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="@+id/imageView_ProfilBilde"
+            app:layout_constraintStart_toStartOf="@+id/imageView_ProfilBilde"
+            app:layout_constraintTop_toBottomOf="@+id/imageView_ProfilBilde" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
-</FrameLayout>
+
+    <EditText
+        android:id="@+id/editText_Email"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="84dp"
+        android:ems="10"
+        android:inputType="textEmailAddress"
+        android:minHeight="48dp"
+        android:text="erna.smerna@høyre.no"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayout" />
+
+    <EditText
+        android:id="@+id/editText_Telefon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="76dp"
+        android:ems="10"
+        android:inputType="phone"
+        android:minHeight="48dp"
+        android:text="22 22 55 55"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editText_Email" />
+
+    <Button
+        android:id="@+id/button_LoggUt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="60dp"
+        android:backgroundTint="#F9F8F8"
+        android:text="Logg ut"
+        android:textColor="#070707"
+        android:textColorHint="#060505"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editText_Telefon"
+        app:layout_constraintVertical_bias="0.263" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycle_view_2"
+        android:layout_width="84dp"
+        android:layout_height="261dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayout" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

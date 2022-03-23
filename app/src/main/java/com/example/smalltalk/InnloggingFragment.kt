@@ -59,10 +59,10 @@ class InnloggingFragment : Fragment() {
 
                 // Opprette et brukerobjekt (dette skal senere komme fra API)
                 // ID på bruker blir autogenerert i entiteten
-                val user = User("Erna", "Solberg")
+                val user = User("Erna", "Erna Solberg") // Dette bør vises i App Inspection -> DB
 
                 // Kalle funksjon med en callback
-                viewModel.logInUser(userDAO,user) {
+                viewModel.logInUser(userDAO,user) { // beskrivelse her !!!!!!!!!!
                     activity?.supportFragmentManager?.commit {
                         setReorderingAllowed(true)
                         add<ChatlistFragment>(R.id.fragmentContainerView)

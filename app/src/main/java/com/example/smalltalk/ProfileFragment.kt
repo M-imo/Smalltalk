@@ -15,6 +15,7 @@ class ProfileFragment : Fragment() {
     lateinit var layoutManager: LinearLayoutManager // sier hvordan innholdet i listen vises
     lateinit var adapter: ProfileAdapter//hvordan cellene skal se ut - må lage selv - lage en adapter klasse
 
+
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -50,7 +51,7 @@ class ProfileFragment : Fragment() {
             )
         )
 
-        recycleView = view.findViewById(R.id.recycle_view)
+        recycleView = view.findViewById(R.id.recycle_view_2)
 
         layoutManager = LinearLayoutManager(activity)
         adapter = ProfileAdapter(profiles)
@@ -61,5 +62,5 @@ class ProfileFragment : Fragment() {
     }
 
 
-    }
+}
 

@@ -1,11 +1,11 @@
 package com.example.smalltalk
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
+import androidx.fragment.app.*
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.smalltalk.database.AppDatabase
@@ -22,13 +22,11 @@ class ChatlistFragment : Fragment() {
 
     private lateinit var recyclerView: RecyclerView
     private lateinit var layoutManager: LinearLayoutManager
-    //    private lateinit var adapter: ChatAdapter
+    //private lateinit var adapter: ChatAdapter
     private lateinit var adapter: ChatAdapterSimple
 
     lateinit var profileIcon: ImageView
-
-    lateinit var userDAO: UserDAO
-    lateinit var loggedInUser: User
+    private val viewModel: ChatlistFragmentViewModel by viewModels()
 
 
     override fun onCreateView(
@@ -41,6 +39,7 @@ class ChatlistFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        profileIcon = view.findViewById(R.id.chat_profile_icon)
 
         val chatList = listOf(
             ChatObject(
@@ -56,10 +55,10 @@ class ChatlistFragment : Fragment() {
         recyclerView = view.findViewById(R.id.chat_recycler_view)
         layoutManager = LinearLayoutManager(activity)
 
-        userDAO = AppDatabase.getInstance((requireContext())).userDAO() // Hva skjer her?
+        viewModel.userDAO =  AppDatabase.getInstance((requireContext())).userDAO() //Henter ut databasen
 
-        // Kalle på funksjonen som gjør databasekall og sende med en callback
-        getLoggedInUser {
+        //kaller på variabelen viewmodel som er et objekt av klassen ChatlistFragmentViewModel
+        viewModel.getLoggedInUser {
             // ! Dette er inne i callback og kjøres først når callback blir kalt fra funksjonen
 
             // Opprette adapter og sende inn listen som dataSet
@@ -77,12 +76,16 @@ class ChatlistFragment : Fragment() {
 
             profileIcon.setOnClickListener {
                 // TODO: Navigere til profilsiden
+                activity?.supportFragmentManager?.commit {
+                    setReorderingAllowed(true)
+                    replace<ProfileFragment>(R.id.fragmentContainerView)
+                }
             }
         }
 
     }
 
-    // Hente lagret bruker fra database
+   /* // Hente lagret bruker fra database
     private fun getLoggedInUser(callback: () -> Unit) {
 
         // Oppretter en tråd og kjører denne (MÅ gjøres når man kommuniserer med database)
@@ -93,5 +96,5 @@ class ChatlistFragment : Fragment() {
             // Kalle på callback
             callback()
         }
-    }
+    }*/ // Dette ligger/kopiert over til ChatlistFragmentViewModel derfor er det kommentert ut her
 }
