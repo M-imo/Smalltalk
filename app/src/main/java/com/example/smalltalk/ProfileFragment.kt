@@ -11,7 +11,7 @@ import androidx.recyclerview.widget.RecyclerView
 
 class ProfileFragment : Fragment() {
 
-    lateinit var recycleView: RecyclerView //
+    //lateinit var recycleView: RecyclerView //
     lateinit var layoutManager: LinearLayoutManager // sier hvordan innholdet i listen vises
     lateinit var adapter: ProfileAdapter//hvordan cellene skal se ut - må lage selv - lage en adapter klasse
 
@@ -51,13 +51,13 @@ class ProfileFragment : Fragment() {
             )
         )
 
-        recycleView = view.findViewById(R.id.recycle_view_2)
+        //recycleView = view.findViewById(R.id.recycle_view_2)
 
         layoutManager = LinearLayoutManager(activity)
         adapter = ProfileAdapter(profiles)
 
-        recycleView.layoutManager = layoutManager
-        recycleView.adapter = adapter //kobler sammen *veldig vikitg å huske å ha med
+        //recycleView.layoutManager = layoutManager
+        //recycleView.adapter = adapter //kobler sammen *veldig vikitg å huske å ha med
 
     }
 

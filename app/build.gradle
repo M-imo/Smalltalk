@@ -2,6 +2,7 @@ plugins {
     id 'com.android.application'
     id 'kotlin-android'
     id 'kotlin-kapt'
+    id 'androidx.navigation.safeargs' //måtte legge denne til tilhører fra kotlin Docs -> FindNavController
 
 }
 
@@ -42,10 +43,12 @@ dependencies {
 
     implementation "androidx.room:room-runtime:2.4.2"
     implementation 'androidx.room:room-common:2.4.2'
-// ikke helt oppdatert skriv inn etter: 1.0.0 trykk på lampa og oppdater til 2.4.1
+
+    // var ikke helt oppdatert skriv inn etter: 1.0.0 trykk på lampa og oppdater til 2.4.1
     kapt "androidx.room:room-compiler:2.4.2"
 
-    implementation("androidx.navigation:navigation-fragment-ktx:2.4.1") //hentet fra kotlin docs og endret
+    //Navigation component
+    implementation("androidx.navigation:navigation-fragment-ktx:2.4.1") //hentet fra kotlin docs og endret her
     implementation("androidx.navigation:navigation-ui-ktx:2.4.1") // same
 
     implementation "androidx.fragment:fragment-ktx:1.4.1"

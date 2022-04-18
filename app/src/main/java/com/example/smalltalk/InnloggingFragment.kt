@@ -12,6 +12,7 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.add
 import androidx.fragment.app.commit
 import androidx.fragment.app.viewModels
+import androidx.navigation.fragment.findNavController
 import com.example.smalltalk.database.AppDatabase
 import com.example.smalltalk.database.User
 import com.example.smalltalk.database.UserDAO
@@ -63,10 +64,8 @@ class InnloggingFragment : Fragment() {
 
                 // Kalle funksjon med en callback
                 viewModel.logInUser(userDAO,user) { // beskrivelse her !!!!!!!!!!
-                    activity?.supportFragmentManager?.commit {
-                        setReorderingAllowed(true)
-                        add<ChatlistFragment>(R.id.fragmentContainerView)
-                    }
+                    findNavController().navigate(InnloggingFragmentDirections.actionInnloggingFragmentToChatlistFragment()) // id 'androidx.navigation.safeargs' i build.gradle (plugin)
+
                 }
             } else {
                 Toast.makeText(context, "Feil brukernavn eller passord", Toast.LENGTH_LONG).show()

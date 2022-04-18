@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import androidx.fragment.app.*
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.smalltalk.database.AppDatabase
@@ -76,9 +77,10 @@ class ChatlistFragment : Fragment() {
 
             profileIcon.setOnClickListener {
                 // TODO: Navigere til profilsiden
+               /* findNavController().navigate(ChatlistFragmentDirections.actionChatlistFragmentToProfileFragment())*/ // du må sende med en string i det siste parametret bruker som er innlogget
                 activity?.supportFragmentManager?.commit {
                     setReorderingAllowed(true)
-                    replace<ProfileFragment>(R.id.fragmentContainerView)
+                    replace<ProfileFragment>(R.id.fragmentContainerView) // bruker replace isf add
                 }
             }
         }
