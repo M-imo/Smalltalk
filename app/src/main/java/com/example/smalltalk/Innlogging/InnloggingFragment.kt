@@ -1,4 +1,4 @@
-package com.example.smalltalk
+package com.example.smalltalk.Innlogging
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -9,16 +9,12 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.widget.AppCompatButton
 import androidx.fragment.app.Fragment
-import androidx.fragment.app.add
-import androidx.fragment.app.commit
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
+import com.example.smalltalk.R
 import com.example.smalltalk.database.AppDatabase
 import com.example.smalltalk.database.User
 import com.example.smalltalk.database.UserDAO
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.launch
 
 class InnloggingFragment : Fragment() {
 
@@ -27,7 +23,7 @@ class InnloggingFragment : Fragment() {
     private lateinit var logInButton: AppCompatButton
     private lateinit var glemtpassord: TextView  // denne kan ikke være med i viewModel fordi den inngår i viewet
     private lateinit var userDAO: UserDAO
-    private val viewModel: InnloggingFragmentViewModel by viewModels() // for å få denne gul må du skrive i InnloggingFragmentviewModel class InnloggingFragmentViewModel : viewModel()
+    private val viewModel: InnloggingViewModel by viewModels() // for å få denne gul må du skrive i InnloggingFragmentviewModel class InnloggingViewModel : viewModel()
 
 
     override fun onCreateView(
@@ -80,7 +76,7 @@ class InnloggingFragment : Fragment() {
             userDAO.deleteAllUsers()
             userDAO.addUser(user)
             callback()
-        }.start() // Dette er flyttet til InnloggingFragmentViewModel så kan slette denne nå
+        }.start() // Dette er flyttet til InnloggingViewModel så kan slette denne nå
     }*/
 }
 

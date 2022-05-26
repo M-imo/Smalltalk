@@ -1,4 +1,4 @@
-package com.example.smalltalk
+package com.example.smalltalk.Innlogging
 
 import android.widget.Toast
 import androidx.core.graphics.Insets.add
@@ -14,7 +14,7 @@ import kotlinx.coroutines.launch
 // i viewModel skal kun sjekke hvis passord og brukernavn er rikitg det skal ikke ha noen tilknytting/ting som inngår i selevet viewet
 //Denne klassen burde hete InnloggingViewModel
 
-class InnloggingFragmentViewModel : ViewModel() { // må skrive dette for å få by viewModels() gul i InnloggingFragment
+class InnloggingViewModel : ViewModel() { // må skrive dette for å få by viewModels() gul i InnloggingFragment
 
     private lateinit var userDAO: UserDAO
 

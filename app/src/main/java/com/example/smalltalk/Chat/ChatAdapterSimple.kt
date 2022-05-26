@@ -1,4 +1,4 @@
-package com.example.smalltalk
+package com.example.smalltalk.Chat
 
 import android.view.Gravity
 import android.view.LayoutInflater
@@ -8,12 +8,14 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.core.view.isVisible
 import androidx.recyclerview.widget.RecyclerView
+import com.example.smalltalk.ChatObject
+import com.example.smalltalk.R
 import java.text.SimpleDateFormat
 import java.util.*
 
     // Tar imot brukernavnet til nåværende innlogget bruker og bruker dette til å sjekke om jeg har sendt meldingen eller ikke
     class ChatAdapterSimple(
-        private var dataSet: List<ChatObject>,
+        var dataSet: List<ChatObject>,
         private val loggedInUsername: String
     ) : RecyclerView.Adapter<ChatAdapterSimple.ChatViewHolder>() {
 

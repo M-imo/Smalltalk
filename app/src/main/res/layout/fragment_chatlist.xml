@@ -74,4 +74,10 @@
         app:layout_constraintStart_toEndOf="@id/chat_message_input"
         app:layout_constraintTop_toTopOf="@id/chat_message_input" />
 
+    <ProgressBar
+        android:id="@+id/chat_loader"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#94FF0000" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

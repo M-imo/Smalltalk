@@ -1,4 +1,4 @@
-package com.example.smalltalk
+package com.example.smalltalk.Profile
 
 import android.graphics.drawable.Drawable
 

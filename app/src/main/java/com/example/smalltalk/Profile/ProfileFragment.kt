@@ -1,4 +1,4 @@
-package com.example.smalltalk
+package com.example.smalltalk.Profile
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -6,7 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
+import com.example.smalltalk.R
 
 
 class ProfileFragment : Fragment() {

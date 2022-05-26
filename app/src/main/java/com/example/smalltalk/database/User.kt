@@ -8,6 +8,6 @@ import androidx.room.PrimaryKey
 data class User (
     val username: String,
     val fullName: String,
-    @PrimaryKey val id: Int = 0
+    @PrimaryKey val id: Int = 0 //Bytte fra 0 til String
     )
 

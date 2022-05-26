@@ -1,4 +1,4 @@
-package com.example.smalltalk
+package com.example.smalltalk.Profile
 
 import android.graphics.Color
 import android.view.LayoutInflater
@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.recyclerview.widget.RecyclerView
+import com.example.smalltalk.R
 
 class ProfileAdapter(
     private val dataSet: List<Profile>    // her kan du endre til ListOf<String> til Profile - endre oxo OnViewCreate

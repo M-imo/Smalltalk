@@ -1,4 +1,4 @@
-package com.example.smalltalk
+package com.example.smalltalk.Chat
 
 import android.content.Context
 import android.view.LayoutInflater
@@ -7,6 +7,8 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.example.smalltalk.ChatObject
+import com.example.smalltalk.R
 import java.text.SimpleDateFormat
 import java.util.*
 

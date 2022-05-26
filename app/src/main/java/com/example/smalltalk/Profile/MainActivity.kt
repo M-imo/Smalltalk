@@ -1,9 +1,12 @@
-package com.example.smalltalk
+package com.example.smalltalk.Profile
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.fragment.app.add
 import androidx.fragment.app.commit
+import com.example.smalltalk.Chat.ChatlistFragment
+import com.example.smalltalk.Innlogging.InnloggingFragment
+import com.example.smalltalk.R
 import com.example.smalltalk.database.AppDatabase
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
